@@ -20,6 +20,19 @@ html, body {
 	font-size: 10vmin;
 }
 
+#info-text {
+	color: #ffffff;
+	z-index: -1;
+}
+
+#info-hover {
+	float: right;
+}
+
+#info-hover:hover > #info-text {
+	z-index: 1 !important;
+}
+
 footer {
 	bottom: 0;
 	background-color: inherit;
@@ -47,7 +60,7 @@ footer > a:before {
 	height: 1px;
 	bottom: 0;
 	left: 0;
-	background-color: inherit;
+	background-color: #ffffff;
 	visibility: hidden;
 	-webkit-transform: scaleX(0);
 	transform: scaleX(0);
