@@ -1,22 +1,38 @@
-function refreshData()
+function changeColor() {
 
-{
-    x = 1;
- 	var d = new Date()
- 	var h = d.getHours();
- 	var m = d.getMinutes();
- 	var s = d.getSeconds();
- 	
- 	if (h <= 9) {h = "0"+h};
- 	if (m <= 9) {m = "0"+m};
-	if (s <= 9) {s = "0"+s};
-	
- 	var	color = "#" + h + m + s;
- 	
-    $("div.wrapper").css("background-color", color );
-    $("p#hex").text(color);
-     
-    setTimeout(refreshData, x * 1000);
+	// Counting number
+
+	x = 1;
+
+	var date = new Date();
+	var hour = date.getHours();
+	var minute = date.getMinutes();
+	var second = date.getSeconds();
+
+	// Ensure that every value has two digits
+
+	if (hour <= 9) {
+		hour = "0" + hour;
+	}
+
+	if (minute <= 9) {
+		minute = "0" + minute;
+	}
+
+	if (second <= 9) {
+		second = "0" + second;
+	}
+
+	var color = "#" + hour + minute + second;
+
+	document.body.style.backgroundColor = color;
+
+	document.getElementById("hex").innerHTML = color;
+
+	// Execute function every second (1000ms)
+
+	setTimeout(changeColor, x * 1000);
+
 }
-  
-refreshData();
+
+changeColor();
